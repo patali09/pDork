@@ -1,14 +1,6 @@
 import subprocess
-try:
-    from selenium import webdriver
-except:
-    subprocess.run("sudo pip3 install selenium", shell=True)
-    from selenium import webdriver
-try:
-    driver = webdriver.Firefox()
-except:
-    subprocess.run("wget -o geckdriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-linux64.tar.gz && tar –xvzf geckdriver.tar.gz && sudo mv geckodriver /usr/bin", shell=True)
-    driver = webdriver.Firefox()
+from selenium import webdriver
+driver = webdriver.Firefox()
 target = input("Enter the target domain: ")
 dorks = {
     1:{"Directory Listing":" site:{target} intitle:index.of"},
