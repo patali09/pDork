@@ -1,5 +1,5 @@
 # pDork
-Advance Google Dorking tool for linux users.
+Advance Google Dorking tool for linux users, powered by selenium.
 
 
 
