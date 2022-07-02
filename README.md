@@ -14,5 +14,5 @@ Installation:
     2. cd pDork
     3. chmod +x pdork.py
     4. ./pdork.py -d twitter.com
-        or
+            or
         ./pdork.py -l /pathtodomainlist
