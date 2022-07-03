@@ -65,7 +65,7 @@ def single_domain():
     while True:
         dork_num = input("Enter the dork number: ")
         if (dork_num.isalnum()):
-            if ((dork_num=="next") or ((dork_num=="exit"))): 
+            if (dork_num=="exit"): 
                 if (dork_num == "exit"):
                     driver.quit()
                     quit()
