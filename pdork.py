@@ -80,7 +80,7 @@ def single_domain():
                 new_dork = dorks[int(dork_num)][key].replace("{target}", target)
                 driver.get(f"https://www.google.com/search?q={new_dork}")
         else:
-            print("[*] The valid range of dork number is: 1 - "+ len(dorks))
+            print("[*] The valid range of dork number is: 1 - "+ str(len(dorks)))
 
 def multi_domain():
     with open(args.l, "r") as targets:
