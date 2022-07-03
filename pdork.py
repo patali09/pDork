@@ -69,9 +69,6 @@ def single_domain():
                 if (dork_num == "exit"):
                     driver.quit()
                     quit()
-                elif(dork_num=="next"):
-                    print("[*] Skipping current target "+ target[:-1])
-                    break
                 else:
                     continue
             try:
