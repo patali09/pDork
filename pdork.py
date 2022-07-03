@@ -64,23 +64,34 @@ def single_domain():
     print("[*] Current target is "+ target)
     while True:
         dork_num = input("Enter the dork number: ")
-        if (len(dorks) >= int(dork_num)): 
-            if (dork_num == "exit"):
-                driver.quit()
-                quit()
-            elif (dork_num==""):
-                print("Sorry enter correct value")
-            elif (dork_num=='10'):
-                driver.get(f"https://{target}/robots.txt")
-
-            else:
-                dork = list(dorks)
-                name = list(dorks[dork[int(dork_num)-1]])
-                key = name[0]
-                new_dork = dorks[int(dork_num)][key].replace("{target}", target)
-                driver.get(f"https://www.google.com/search?q={new_dork}")
+        if (dork_num.isalnum()):
+            if ((dork_num=="next") or ((dork_num=="exit"))): 
+                if (dork_num == "exit"):
+                    driver.quit()
+                    quit()
+                elif(dork_num=="next"):
+                    print("[*] Skipping current target "+ target[:-1])
+                    break
+                else:
+                    continue
+            try:
+                if (len(dorks) >= int(dork_num)):
+                    if (dork_num=='10'):
+                        driver.get(f"https://{target}/robots.txt")
+                    else:
+                        dork = list(dorks)
+                        name = list(dorks[dork[int(dork_num)-1]])
+                        key = name[0]
+                        new_dork = dorks[int(dork_num)][key].replace("{target}", target)
+                        driver.get(f"https://www.google.com/search?q={new_dork}")
+                else:
+                    print(f"\nSorry, Wrong Dork Number or Wrong Command\nValid Commands are: \n\t--> 1 to {len(dorks)}\n\t--> exit")
+            except:
+                    print(f"\nValid Commands are: \n\t--> 1 to {len(dorks)}\n\t--> exit")
         else:
-            print("[*] The valid range of dork number is: 1 - "+ str(len(dorks)))
+            print("[*] Invalid Command")
+            print(f"\nValid Commands are: \n\t--> 1 to {len(dorks)}\n\t--> exit")
+
 
 def multi_domain():
     with open(args.l, "r") as targets:
