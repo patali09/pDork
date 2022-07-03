@@ -64,7 +64,7 @@ def single_domain():
     print("[*] Current target is "+ target)
     while True:
         dork_num = input("Enter the dork number: ")
-        if (len(dorks) <= int(dork_num)): 
+        if (len(dorks) >= int(dork_num)): 
             if (dork_num == "exit"):
                 driver.quit()
                 quit()
