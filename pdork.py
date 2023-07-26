@@ -19,12 +19,12 @@ driver = webdriver.Firefox()
 
 dorks = {
     1:{"Directory Listing":" site:{target} intitle:index.of"},
-    2:{"Configuration Files ":" site:{target} ext:xml | ext:conf | ext:cnf | ext:reg | ext:inf | ext:rdp | ext:cfg | ext:txt | ext:ora | ext:ini"},
+    2:{"Configuration Files ":" site:{target} ext:xml | ext:conf | ext:cnf | ext:reg | ext:inf | ext:rdp | ext:cfg | ext:txt | ext:ora | ext:ini | ext:env"},
     3:{"Database Files":" site:{target} ext:sql | ext:dbf | ext:mdb"},
-    4:{"WordPress":" site:{target} inurl:wp- | inurl:wp-content | inurl:plugins | inurl:uploads | inurl:themes | inurl:download"},
-    5:{"Log Files":"site:{target} ext:log"},
-    6:{"Backup and Old Files":"site:{target} ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup"},
-    7:{"Login Pages":"site:{target} inurl:login | inurl:signin | intitle:Login | intitle: signin | inurl:auth"},
+    4:{"Editor Cached File":" site:{target} ext:swp | ext:old | ext:~ | ext:svn"},
+    5:{"WordPress":" site:{target} inurl:wp- | inurl:wp-content | inurl:plugins | inurl:uploads | inurl:themes | inurl:download"},
+    6:{"Log Files":"site:{target} ext:log"},
+    7:{"Backup and Old Files":"site:{target} ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup"},
     8:{"SQL Errors":'site:{target} intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"'},
     9:{"Apache Connfig FIles":'site:{target} filetype:config "apache"'},
     10:{"Robots.txt File":"{target}/robots.txt"},
@@ -46,7 +46,9 @@ dorks = {
     26:{"s3 Bucets ":'site:.s3.amazonaws.com "{target}"'},
     27:{'CVE-2020-0646 SharePointRCE':".sharepoint.com/_vti_bin/webpartpages/asmx -docs -msdn -mdsec site:{target} "},
     28:{"API Endpoints WSDL" : 'site:{target} filetype:wsdl | filetype:WSDL | ext:svc | inurl:wsdl | Filetype: ?wsdl | inurl:asmx?wsdl | inurl:jws?wsdl | intitle:_vti_bin/sites.asmx?wsdl | inurl:_vti_bin/sites.asmx?wsdl'},
-    29:{"Plaintext Password Leak": "site:throwbin.io {target}"}
+    29:{"Plaintext Password Leak": "site:throwbin.io {target}"},
+    30:{"Login Pages":"site:{target} inurl:login | inurl:signin | intitle:Login | intitle: signin | inurl:auth"},
+
 }
 
  
