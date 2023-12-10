@@ -36,7 +36,7 @@ dorks = {
     16:{"Apache STRUTS RCE":"site:{target} ext:action | ext:struts | ext:do"},
     17:{"GitLab":"inurl:gitlab {target}"},
     18:{"Find Pastenin entries ":" site:pastebin.com {target}"},
-    19:{"Employees on LINKDIIN ":" site:linkedin.com employees {target}"},
+    19:{"Postman Collection leakage":" site:postman.com {target}"},
     20:{".htaccess sensitive files ":'site:{target} inurl:"phpinfo.php" | inurl:".htaccess"'},
     21:{"Find WordPress #2 ":' site:{target} inurl:wp":"content | inurl:wp":"includes"'},
     22:{"Test CrossDomain ":" {target}/crossdomain.xml"},
