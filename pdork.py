@@ -48,6 +48,7 @@ dorks = {
     28:{"API Endpoints WSDL" : 'site:{target} filetype:wsdl | filetype:WSDL | ext:svc | inurl:wsdl | Filetype: ?wsdl | inurl:asmx?wsdl | inurl:jws?wsdl | intitle:_vti_bin/sites.asmx?wsdl | inurl:_vti_bin/sites.asmx?wsdl'},
     29:{"Plaintext Password Leak": "site:throwbin.io {target}"},
     30:{"Login Pages":"site:{target} inurl:login | inurl:signin | intitle:Login | intitle: signin | inurl:auth"},
+    31:{"Dev or Test Environment":"inurl:demo | inurl:dev | inurl:staging | inurl:test | inurl:sandbox site:{target}"}
 
 }
 
