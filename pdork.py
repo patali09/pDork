@@ -8,14 +8,25 @@ args = pars.parse_args()
 try:
     from selenium import webdriver
 except:
-    print("______First Install Python Selenium _____")
-    quit()
+    print("______Installing Selenium _____")
+    subprocess.run("sudo apt install python3-pip; pip install selenium", shell=True)
 try:
     subprocess.run("figlet pDork", shell=True)
     print("                                                 By Patali")
 except:
     pass
-driver = webdriver.Firefox()
+
+try:
+    try:
+	    driver = webdriver.Firefox()
+    except:
+        driver = webdriver.Chrome()
+except:
+    print("Please install gekodriver in your system path!!! Download the latest release from https://github.com/mozilla/geckodriver and extract it. Move it to /usr/bin ")
+    exit()
+	
+    
+
 
 dorks = {
     1:{"Directory Listing":" site:{target} intitle:index.of"},
@@ -43,12 +54,12 @@ dorks = {
     23:{".gt folder ":' inurl:"/.git "{target} ":"github"'},
     24:{"Find .SWF file (Google) ":" inurl:{target} ext:swf"},
     25:{"Traefik ":'intitle:traefik inurl:8080/dashboard    "{target}"'},
-    26:{"s3 Bucets ":'site:.s3.amazonaws.com "{target}"'},
+    26:{"s3 Bucets ":'site:s3.amazonaws.com "{target}"'},
     27:{'CVE-2020-0646 SharePointRCE':".sharepoint.com/_vti_bin/webpartpages/asmx -docs -msdn -mdsec site:{target} "},
     28:{"API Endpoints WSDL" : 'site:{target} filetype:wsdl | filetype:WSDL | ext:svc | inurl:wsdl | Filetype: ?wsdl | inurl:asmx?wsdl | inurl:jws?wsdl | intitle:_vti_bin/sites.asmx?wsdl | inurl:_vti_bin/sites.asmx?wsdl'},
     29:{"Plaintext Password Leak": "site:throwbin.io {target}"},
     30:{"Login Pages":"site:{target} inurl:login | inurl:signin | intitle:Login | intitle: signin | inurl:auth"},
-    31:{"Dev or Test Environment":"inurl:demo | inurl:dev | inurl:staging | inurl:test | inurl:sandbox site:{target}"}
+    31:{"Dev or Test Environment":"inurl:demo | inurl:dev | inurl:staging | inurl:test | inurl: uat | inurl:sandbox site:{target}"}
 
 }
 
